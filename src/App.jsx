@@ -7,6 +7,7 @@ import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
 import { Wrapper } from "./components/Wrapper/Wrapper";
 import Education from "./components/Education/Education";
+import Experience from "./components/Experience/Experience";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <Wrapper>
           <Skills />
+          <Experience />
           <Education />
         </Wrapper>
       </Body>
