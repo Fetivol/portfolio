@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const Span = styled.span`
-  overflow: hidden;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-`;
-
 export const Document = styled.img`
   display: none;
   height: 70px;
@@ -21,10 +12,30 @@ export const Document = styled.img`
   }
 `;
 
+export const Description = styled.div`
+  width: 100%;
+  font-size: 15px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_primary + 99};
+  margin-bottom: 10px;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+export const Span = styled.span`
+  overflow: hidden;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+`;
+
 export const Card = styled.div`
   width: 650px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   padding: 12px 16px;
   justify-content: space-between;
   position: relative;
@@ -51,9 +62,7 @@ export const Card = styled.div`
     overflow: visible;
     -webkit-line-clamp: unset;
   }
-
-  border: 0.1px solid #306ee8;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border: 0.1px solid #854ce6;
 `;
 
 export const Top = styled.div`
@@ -78,7 +87,7 @@ export const Body = styled.div`
   flex-direction: column;
 `;
 
-export const Role = styled.h3`
+export const CardName = styled.h3`
   font-size: 18px;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary + 99};
@@ -87,7 +96,7 @@ export const Role = styled.h3`
   }
 `;
 
-export const Company = styled.p`
+export const CardInfo = styled.p`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_secondary + 99};
@@ -96,7 +105,7 @@ export const Company = styled.p`
   }
 `;
 
-export const Date = styled.p`
+export const CardDate = styled.p`
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary + 80};
@@ -104,18 +113,35 @@ export const Date = styled.p`
     font-size: 10px;
   }
 `;
+/*--------------*/
+// export const Role = styled.h3`
+//   font-size: 18px;
+//   font-weight: 600;
+//   color: ${({ theme }) => theme.text_primary + 99};
+//   @media only screen and (max-width: 768px) {
+//     font-size: 14px;
+//   }
+// `;
 
-export const Description = styled.div`
-  width: 100%;
-  font-size: 15px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_primary + 99};
-  margin-bottom: 10px;
+// export const Company = styled.p`
+//   font-size: 14px;
+//   font-weight: 500;
+//   color: ${({ theme }) => theme.text_secondary + 99};
+//   @media only screen and (max-width: 768px) {
+//     font-size: 12px;
+//   }
+// `;
+
+/*-------Education-------*/
+export const Grade = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_secondary + 99};
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
 `;
-
+/*--------Experience------*/
 export const Skills = styled.div`
   width: 100%;
   display: flex;

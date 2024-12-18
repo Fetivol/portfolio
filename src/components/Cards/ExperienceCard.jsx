@@ -1,19 +1,20 @@
 import React from "react";
+
 import {
   Body,
+  CardName,
+  CardInfo,
+  CardDate,
   Card,
-  Company,
-  Date,
   Description,
   Document,
   Image,
   ItemWrapper,
-  Role,
   Skill,
   Skills,
   Span,
   Top,
-} from "./ExperienceCard.styled";
+} from "./Cards.styled";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -21,9 +22,9 @@ const ExperienceCard = ({ experience }) => {
       <Top>
         <Image src={experience.img} alt="" />
         <Body>
-          <Role>{experience.role}</Role>
-          <Company>{experience.company}</Company>
-          <Date>{experience.date}</Date>
+          <CardName>{experience.role}</CardName>
+          <CardInfo>{experience.company}</CardInfo>
+          <CardDate>{experience.date}</CardDate>
         </Body>
       </Top>
       <Description>

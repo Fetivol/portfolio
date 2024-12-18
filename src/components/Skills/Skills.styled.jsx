@@ -7,6 +7,7 @@ export const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
+  padding: 0px 0px 60px 0px;
 `;
 
 export const Wrapper = styled.div`
@@ -17,6 +18,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1100px;
+  /* padding: 40px 0px 0px 0px; */
   gap: 12px;
   @media (max-width: 960px) {
     flex-direction: column;
