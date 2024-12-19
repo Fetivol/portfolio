@@ -112,14 +112,21 @@ export const Members = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  gap: 10px;
+  padding-left: 0;
+  margin: 0;
+`;
+export const ImageItem = styled.li`
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 `;
 
 export const Avatar = styled.img`
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  margin-left: -10px;
+  margin-left: 0;
   background-color: ${({ theme }) => theme.white};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 3px solid ${({ theme }) => theme.card};

@@ -9,8 +9,12 @@ import { Wrapper } from "./components/Wrapper/Wrapper";
 import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
+import { useState } from "react";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Navbar />
@@ -19,9 +23,11 @@ function App() {
         <Wrapper>
           <Skills />
           <Experience />
+        </Wrapper>
+        <Projects openModal={openModal} setOpenModal={setOpenModal} />
+        <Wrapper>
           <Education />
         </Wrapper>
-        <Projects />
       </Body>
     </ThemeProvider>
   );

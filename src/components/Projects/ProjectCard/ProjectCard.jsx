@@ -6,15 +6,16 @@ import {
   Description,
   Details,
   Image,
+  ImageItem,
   Members,
   Tag,
   Tags,
   Title,
 } from "./ProjectCard.styled";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, setOpenModal }) => {
   return (
-    <Card>
+    <Card onClick={() => setOpenModal({ state: true, project: project })}>
       <Image src={project.image} alt={project.title} />
       {project.tags?.length > 0 && (
         <Tags>
@@ -30,10 +31,10 @@ const ProjectCard = ({ project }) => {
       </Details>
       {project.member?.length > 0 && (
         <Members>
-          {project.member?.map((item, index) => (
-            <li key={index}>
-              <Avatar scr={item.img} alt={item.name} />
-            </li>
+          {project.member.map((item, index) => (
+            <ImageItem key={index}>
+              <Avatar src={item.img} alt={item.name} />
+            </ImageItem>
           ))}
         </Members>
       )}

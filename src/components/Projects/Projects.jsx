@@ -12,7 +12,7 @@ import {
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { projects } from "../../data/constants";
 
-const Projects = () => {
+const Projects = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState("all");
   const toggleOptions = ["all", "web app", "android app", "machine learning"];
 
@@ -44,7 +44,12 @@ const Projects = () => {
           {projects
             .filter((item) => toggle === "all" || item.category === toggle)
             .map((project) => (
-              <ProjectCard project={project} key={project.id} />
+              <ProjectCard
+                project={project}
+                key={project.id}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
             ))}
         </CardContainer>
       </Wrapper>
