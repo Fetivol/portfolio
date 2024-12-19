@@ -48,6 +48,7 @@ export const Desc = styled.p`
 `;
 
 export const SkillsContainer = styled.ul`
+  list-style: none;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

@@ -53,7 +53,8 @@ export const Desc = styled.p`
   }
 `;
 
-export const ToggleButtonGroup = styled.div`
+export const ToggleButtonGroup = styled.ul`
+  list-style: none;
   display: flex;
   border: 1.5px solid ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.primary};
@@ -92,6 +93,7 @@ export const Divider = styled.div`
 `;
 
 export const CardContainer = styled.ul`
+  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;

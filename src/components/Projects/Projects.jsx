@@ -9,7 +9,7 @@ import {
   ToggleButtonGroup,
   Wrapper,
 } from "./Projects.styled";
-import ProjectCard from "../Cards/ProjectCard";
+import ProjectCard from "./ProjectCard/ProjectCard";
 import { projects } from "../../data/constants";
 
 const Projects = () => {
@@ -25,8 +25,8 @@ const Projects = () => {
           projects.
         </Desc>
         <ToggleButtonGroup>
-          {toggleOptions.map((option) => (
-            <>
+          {toggleOptions.map((option, index) => (
+            <li key={`${option}-${index}`}>
               <ToggleButton
                 active={toggle === option}
                 value={option}
@@ -37,7 +37,7 @@ const Projects = () => {
               {option !== toggleOptions[toggleOptions.length - 1] && (
                 <Divider />
               )}
-            </>
+            </li>
           ))}
         </ToggleButtonGroup>
         <CardContainer>
