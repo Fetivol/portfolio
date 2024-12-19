@@ -14,6 +14,7 @@ import { projects } from "../../data/constants";
 
 const Projects = () => {
   const [toggle, setToggle] = useState("all");
+  const toggleOptions = ["all", "web app", "android app", "machine learning"];
 
   return (
     <Container id="projects">
@@ -24,71 +25,24 @@ const Projects = () => {
           projects.
         </Desc>
         <ToggleButtonGroup>
-          {toggle === "all" ? (
-            <ToggleButton active value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          ) : (
-            <ToggleButton value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "web app" ? (
-            <ToggleButton
-              active
-              value="web app"
-              onClick={() => setToggle("web app")}
-            >
-              web app
-            </ToggleButton>
-          ) : (
-            <ToggleButton value="web app" onClick={() => setToggle("web app")}>
-              web app
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "android app" ? (
-            <ToggleButton
-              active
-              value="android app"
-              onClick={() => setToggle("android app")}
-            >
-              android app
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="android app"
-              onClick={() => setToggle("android app")}
-            >
-              android app
-            </ToggleButton>
-          )}
-          <Divider />
-          {toggle === "machine learning" ? (
-            <ToggleButton
-              active
-              value="machine learning"
-              onClick={() => setToggle("machine learning")}
-            >
-              machine learning
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="machine learning"
-              onClick={() => setToggle("machine learning")}
-            >
-              machine learning
-            </ToggleButton>
-          )}
+          {toggleOptions.map((option) => (
+            <>
+              <ToggleButton
+                active={toggle === option}
+                value={option}
+                onClick={() => setToggle(option)}
+              >
+                {option}
+              </ToggleButton>
+              {option !== toggleOptions[toggleOptions.length - 1] && (
+                <Divider />
+              )}
+            </>
+          ))}
         </ToggleButtonGroup>
         <CardContainer>
-          {toggle === "all" &&
-            projects.map((project) => (
-              <ProjectCard project={project} key={project.id} />
-            ))}
           {projects
-            .filter((item) => item.category === toggle)
+            .filter((item) => toggle === "all" || item.category === toggle)
             .map((project) => (
               <ProjectCard project={project} key={project.id} />
             ))}
