@@ -28,8 +28,20 @@ const Contact = () => {
     const subject = formData.get("subject");
     const message = formData.get("message");
 
+    const isValidEmail = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      console.log(emailRegex.test(email));
+      return emailRegex.test(email);
+    };
+
     if (!fromEmail || !fromName || !subject || !message) {
       setFormError("Please fill all the fields.");
+      return;
+    }
+
+    if (!isValidEmail(fromEmail)) {
+      setFormError("Please enter a valid email address.");
+      return;
     }
     emailjs
       .sendForm(
