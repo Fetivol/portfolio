@@ -20,11 +20,24 @@ import { useTheme } from "styled-components";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
+  const links = [
+    "About",
+    "Skills",
+    "Experience",
+    "Projects",
+    "Education",
+    "Contact",
+  ];
 
   return (
     <Nav>
       <NavContainer>
-        <NavLogo to="/">
+        <NavLogo
+          to="/"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -33,7 +46,7 @@ const Navbar = () => {
               cursor: "pointer",
             }}
           >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+            <DiCssdeck size="3rem" /> <Span>Fetivol</Span>
           </div>
         </NavLogo>
         <MobileIcon>
@@ -44,11 +57,9 @@ const Navbar = () => {
           />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
+          {links.map((link) => {
+            return <NavLink href={`#${link.toLowerCase()}`}>{link}</NavLink>;
+          })}
         </NavItems>
         <ButtonContainer>
           <GithubButton
@@ -61,46 +72,19 @@ const Navbar = () => {
         </ButtonContainer>
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
-            <MobileLink
-              href="#about"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              About
-            </MobileLink>
-            <MobileLink
-              href="#skills"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Skills
-            </MobileLink>
-            <MobileLink
-              href="#experience"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Experience
-            </MobileLink>
-            <MobileLink
-              href="#projects"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Projects
-            </MobileLink>
-            <MobileLink
-              href="#education"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Education
-            </MobileLink>
+            {links.map((link) => {
+              return (
+                <MobileLink
+                  href={`#${link.toLowerCase()}`}
+                  key={link}
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                  }}
+                >
+                  {link}
+                </MobileLink>
+              );
+            })}
             <GithubButton
               style={{
                 padding: "10px 16px",

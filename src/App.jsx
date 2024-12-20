@@ -12,6 +12,7 @@ import Projects from "./components/Projects/Projects";
 import { useState } from "react";
 import ProjectDetails from "./components/Projects/ProjectDetails/ProjectDetails";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -31,6 +32,7 @@ function App() {
           <Education />
           <Contact />
         </Wrapper>
+        <Footer />
         {openModal.state && (
           <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
         )}
