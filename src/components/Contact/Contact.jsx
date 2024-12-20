@@ -16,10 +16,38 @@ import {
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
+  const [formError, setFormError] = useState("");
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const formData = new FormData(form.current);
+    const fromEmail = formData.get("from_email");
+    const fromName = formData.get("from_name");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    if (!fromEmail || !fromName || !subject || !message) {
+      setFormError("Please fill all the fields.");
+    }
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          setOpen(true);
+          setFormError("");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -35,7 +63,7 @@ const Contact = () => {
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit">Send</ContactButton>
+          <ContactButton type="submit" value="Send"></ContactButton>
         </ContactForm>
         <Snackbar
           open={open}
@@ -43,6 +71,13 @@ const Contact = () => {
           onClose={() => setOpen(false)}
           message="Email sent successfully!"
           severity="success"
+        />
+        <Snackbar
+          open={!!formError}
+          autoHideDuration={6000}
+          onClose={() => setFormError("")}
+          message={formError}
+          severity="error"
         />
       </Wrapper>
     </Container>

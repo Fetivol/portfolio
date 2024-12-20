@@ -98,7 +98,7 @@ export const ContactInputMessage = styled.textarea`
   }
 `;
 
-export const ContactButton = styled.button`
+export const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
