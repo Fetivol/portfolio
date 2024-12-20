@@ -2,9 +2,17 @@ import React from "react";
 import { CloseRounded, GitHub, LinkedIn } from "@mui/icons-material";
 import { Modal } from "@mui/material";
 import {
+  Button,
+  ButtonGroup,
   Container,
   Date,
+  Desc,
   Image,
+  Label,
+  Member,
+  MemberImage,
+  MemberName,
+  Members,
   Tag,
   Tags,
   Title,
@@ -40,6 +48,42 @@ const ProjectDetails = ({ openModal, setOpenModal }) => {
               ))}
             </Tags>
           )}
+          <Desc>{project?.description}</Desc>
+          {project.member && (
+            <>
+              <Label>Members</Label>
+              <Members>
+                {project?.member.map((member, index) => (
+                  <Member key={index}>
+                    <MemberImage src={member.img} />
+                    <MemberName>{member.name}</MemberName>
+                    <a
+                      href={member.github}
+                      target="new"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <GitHub />
+                    </a>
+                    <a
+                      href={member.linkedin}
+                      target="new"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <LinkedIn />
+                    </a>
+                  </Member>
+                ))}
+              </Members>
+            </>
+          )}
+          <ButtonGroup>
+            <Button dull href={project?.github} target="new">
+              View Code
+            </Button>
+            <Button href={project?.webapp} target="new">
+              View Live App
+            </Button>
+          </ButtonGroup>
         </Wrapper>
       </Container>
     </Modal>

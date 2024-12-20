@@ -10,6 +10,8 @@ import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import { useState } from "react";
+import ProjectDetails from "./components/Projects/ProjectDetails/ProjectDetails";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -27,7 +29,11 @@ function App() {
         <Projects openModal={openModal} setOpenModal={setOpenModal} />
         <Wrapper>
           <Education />
+          <Contact />
         </Wrapper>
+        {openModal.state && (
+          <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
+        )}
       </Body>
     </ThemeProvider>
   );
