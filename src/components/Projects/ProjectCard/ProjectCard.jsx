@@ -17,7 +17,7 @@ const ProjectCard = ({ project, setOpenModal }) => {
   return (
     <Card
       onClick={(e) => {
-        e.stopPropagation(); // Prevent propagation
+        e.stopPropagation();
         setOpenModal({ state: true, project: project });
       }}
     >
