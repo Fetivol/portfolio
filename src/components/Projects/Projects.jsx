@@ -14,7 +14,7 @@ import { projects } from "../../data/constants";
 
 const Projects = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState("all");
-  const toggleOptions = ["all", "web app", "android app", "machine learning"];
+  const toggleOptions = ["all", "html", "react", "node"];
 
   return (
     <Container id="projects">

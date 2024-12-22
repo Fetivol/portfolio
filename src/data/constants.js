@@ -227,26 +227,26 @@ export const education = [
 
 export const projects = [
   {
-    id: 9,
+    id: 0,
     title: "Book Shelf",
     date: "2023",
     description:
       "Developed a JavaScript-based web application that enables users to view and add books to a shopping cart. The project features a responsive layout with a header that includes a logo, theme switcher, and burger menu for navigation. The home page showcases book categories, highlights charitable foundations, and lists available books. Users can access detailed information about each book through a modal window, which includes links to purchase resources. Additionally, the application provides a shopping list page for storing selected books in local storage, incorporates a loader for asynchronous requests, and features a scroll-up button for enhanced user convenience. This project demonstrates essential web development skills and offers basic functionality for an online book shopping platform.",
     image: "https://live.staticflickr.com/65535/54220278731_b5ae6901aa_b.jpg",
     tags: ["JavaScript", "CSS", "HTML", "REST APIs"],
-    category: "web app",
+    category: "html",
     github: "https://github.com/Fetivol/team-project-group-3-JS",
     webapp: "https://anetta999.github.io/team-project-group-3-JS/",
   },
   {
-    id: 0,
+    id: 1,
     title: "WatchSpot",
     date: "2023",
     description:
       "Responsive Website Project: Developed a fully responsive website optimized for various devices, ensuring compliance with HTML5 semantics and layout validity through standard validation tools. The project utilized font-face for typography, optimized image loading for both vector and raster graphics, and supported retina screens. Key features included the use of icon sprites and the addition of a favicon. The site comprised multiple sections such as Header, About Us, Catalog, Footer, Buy Now (popup), and a Burger menu for mobile devices, each designed with specific layout requirements for mobile (375px), tablet (768px), and desktop (1280px) views. Additionally, I served as the Scrum Master, organizing daily meetings, facilitating open team communication, monitoring project progress and deadlines, resolving issues, liaising with the mentor, and addressing bugs to ensure successful project delivery.",
     image: "https://live.staticflickr.com/65535/54219384147_ea6600ac7f_b.jpg",
     tags: ["HTML", "CSS", "Responsive Web Design"],
-    category: "web app",
+    category: "html",
     github: "https://github.com/Fetivol/watchspot",
     webapp: "https://light131313.github.io/watchspot/",
     member: [
@@ -257,5 +257,87 @@ export const projects = [
         github: "https://github.com/LIGHT131313",
       },
     ],
+  },
+  {
+    id: 2,
+    title: "Water Tracker",
+    date: "2023",
+    description:
+      "WaterTracker Application: Developed a comprehensive application that enables users to monitor their daily water consumption effectively. The app features user registration and login via password or Google Auth, along with password recovery through email confirmation. Users can edit their profiles, including avatar, name, email, and password, and have the option to delete their accounts along with their water consumption data. The application allows users to customize their daily water intake goals, add, update, and delete records of consumed water, and provides calculations for total water intake for the current day or selected month. This project emphasizes user-friendly design and functionality, making it easier for individuals to stay hydrated and manage their water consumption efficiently.",
+    image: "https://live.staticflickr.com/65535/54219424482_c310b7829f_k.jpg",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "MongoDb",
+      "JWT",
+      "CORS",
+      "Swagger-ui-express",
+      "Axios",
+    ],
+    category: "node",
+    github: "https://github.com/LIGHT131313/WaterTracker_backend",
+    webapp: "https://watertracker-backend.onrender.com/api-docs",
+    member: [
+      {
+        name: "Serhii Kozhanov",
+        img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
+        linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
+        github: "https://github.com/LIGHT131313",
+      },
+      {
+        name: "Stanislav Boychuk",
+        img: "https://media.licdn.com/dms/image/v2/D4D35AQERhmSx-x4oJw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1694796381168?e=1735484400&v=beta&t=Z7sqPQBYJ0vRaYEfUr9L8NCy_xfFktuAr5who-Dx-Gc",
+        linkedin: "https://www.linkedin.com/in/stanislav-boychuk/",
+        github: "https://github.com/Fasten-belts",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "WebStudio",
+    date: "2023",
+    description:
+      "The project focuses on both the Markup and Styling aspects of web development. In Markup, it ensures proper HTML structuring using semantic tags, and key elements such as subscription and request forms are appropriately marked up. The Styling aspect underscores the consistent application of design principles, including transitions for hover and focus effects (overlays and 2D animations), the use of media queries for responsive design, and the integration of a mobile menu script. Additionally, the project pays attention to details such as icon utilization through SVG graphics, active states for interactive elements, and the correct implementation of modal windows with their associated scripts.",
+    image: "https://live.staticflickr.com/65535/54220586654_a3f3ef8d8d_h.jpg",
+    tags: ["HTML", "CSS", "Responsive Web Design"],
+    category: "html",
+    github: "https://github.com/Fetivol/WebStudio-HTML-CSS",
+    webapp: "https://fetivol.github.io/WebStudio-HTML-CSS/",
+  },
+  {
+    id: 4,
+    title: "Search Image",
+    date: "2023",
+    description:
+      "The project is a JavaScript application that allows users to search for and display images from the Unsplash API. It features a user-friendly interface with a search bar for entering keywords, displaying results in a responsive grid layout. The application supports infinite scrolling, automatically loading more images as users scroll down the page, enhancing the browsing experience. Users can click on individual images to view them in a larger format. This project showcases skills in API integration, asynchronous programming, and responsive web design, making it an excellent demonstration of front-end development capabilities.",
+    image: "https://live.staticflickr.com/65535/54219467192_f1af3dfab7_h.jpg",
+    tags: ["JavaScript", "HTML", "CSS", "REST API", "Responsive Web Design"],
+    category: "html",
+    github: "https://github.com/Fetivol/goit-js-hw-11",
+    webapp: "https://fetivol.github.io/goit-js-hw-11/",
+  },
+  {
+    id: 5,
+    title: "Expense Tracker",
+    date: "2024",
+    description:
+      "The Expense Tracker is a web application designed to help users manage and track their personal finances effectively. It allows users to add and delete expense records, view their financial data through a user-friendly interface",
+    image: "https://live.staticflickr.com/65535/54220803215_81c5441477_b.jpg",
+    tags: ["React", "JavaScript", "HTML", "CSS"],
+    category: "react",
+    github: "https://github.com/Fetivol/expence-tracker",
+    webapp: "https://fetivol.github.io/expence-tracker/",
+  },
+  {
+    id: 6,
+    title: "Educity",
+    date: "2024",
+    description:
+      "The React Educity is a web application designed to provide users with an interactive platform for university students. Built using React, the application features a responsive layout that allows users to navigate through various sections. The project incorporates state management for seamless data handling and utilizes modern libraries and tools to enhance user experience.",
+    image: "https://live.staticflickr.com/65535/54220438026_b8c51f51c3_h.jpg",
+    tags: ["React Js", "JavaScript", "HTML", "CSS"],
+    category: "react",
+    github: "https://github.com/Fetivol/react-educity",
+    webapp: "https://fetivol.github.io/react-educity/",
   },
 ];
