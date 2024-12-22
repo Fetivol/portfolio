@@ -1,6 +1,6 @@
 import "./App.css";
 import { ThemeProvider } from "styled-components";
-import { darkTheme } from "./utils/Themes";
+import { darkTheme, lightTheme } from "./utils/Themes";
 import { Body } from "./Body.styled";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -18,9 +18,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
 
+  const currentTheme = darkMode ? darkTheme : lightTheme;
+
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Navbar />
+    <ThemeProvider theme={currentTheme}>
+      <Navbar setDarkMode={setDarkMode} darkMode={darkMode} />
       <Body>
         <Hero />
         <Wrapper>

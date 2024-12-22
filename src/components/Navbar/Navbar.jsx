@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   ButtonContainer,
   GithubButton,
@@ -11,23 +11,42 @@ import {
   NavLink,
   NavLogo,
   Span,
+  ThemeToggle,
 } from "./Navbar.styled";
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { Bio } from "../../data/constants";
 import { useTheme } from "styled-components";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ setDarkMode, darkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("about");
   const theme = useTheme();
-  const links = [
-    "About",
-    "Skills",
-    "Experience",
-    "Projects",
-    "Education",
-    "Contact",
-  ];
+  const links = useMemo(
+    () => ["About", "Skills", "Experience", "Projects", "Education", "Contact"],
+    []
+  );
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = links.map((link) =>
+        document.getElementById(link.toLowerCase())
+      );
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+          setActiveLink(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [links]);
 
   return (
     <Nav>
@@ -58,13 +77,27 @@ const Navbar = () => {
         </MobileIcon>
         <NavItems>
           {links.map((link) => {
+            const id = link.toLowerCase();
             return (
-              <NavLink href={`#${link.toLowerCase()}`} key={link}>
+              <NavLink
+                href={`#${id.toLowerCase()}`}
+                key={id}
+                className={activeLink === id ? "active" : ""}
+                onClick={() => setActiveLink(id)}
+              >
                 {link}
               </NavLink>
             );
           })}
         </NavItems>
+
+        <ThemeToggle
+          onClick={() => setDarkMode((prevMode) => !prevMode)}
+          darkMode={darkMode}
+        >
+          <span>{darkMode ? <FaMoon /> : <FaSun />}</span>
+        </ThemeToggle>
+
         <ButtonContainer>
           <GithubButton
             href={Bio.github}
@@ -77,11 +110,14 @@ const Navbar = () => {
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             {links.map((link) => {
+              const id = link.toLowerCase();
               return (
                 <MobileLink
-                  href={`#${link.toLowerCase()}`}
-                  key={link}
+                  href={`#${id}`}
+                  key={id}
+                  className={activeLink === id ? "active" : ""}
                   onClick={() => {
+                    setActiveLink(id);
                     setIsOpen(!isOpen);
                   }}
                 >

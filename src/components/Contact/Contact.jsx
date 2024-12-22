@@ -78,6 +78,7 @@ const Contact = () => {
         </ContactForm>
         <Snackbar
           open={open}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           autoHideDuration={6000}
           onClose={() => setOpen(false)}
           message="Email sent successfully!"
@@ -85,6 +86,7 @@ const Contact = () => {
         />
         <Snackbar
           open={!!formError}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           autoHideDuration={6000}
           onClose={() => setFormError("")}
           message={formError}

@@ -9,6 +9,8 @@ export const darkTheme = {
   button: "#854CE6",
   white: "#FFFFFF",
   black: "#000000",
+  theme_button1: "#FF8C00",
+  theme_button2: "#fff;",
 };
 
 export const lightTheme = {
@@ -19,4 +21,8 @@ export const lightTheme = {
   text_secondary: "#48494a",
   card: "#FFFFFF",
   button: "#5c5b5b",
+  card_light: "#f0f0f0",
+
+  theme_button1: "#4A90E2",
+  theme_button2: "#854CE6",
 };

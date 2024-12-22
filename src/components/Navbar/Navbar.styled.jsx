@@ -19,6 +19,7 @@ export const Nav = styled.div`
 export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 60px;
   z-index: 1;
   width: 100%;
@@ -66,7 +67,7 @@ export const NavLink = styled.a`
 `;
 
 export const ButtonContainer = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: end;
@@ -155,5 +156,34 @@ export const MobileLink = styled.a`
 
   &.active {
     border-bottom: 2px solid ${({ theme }) => theme.primary};
+  }
+`;
+
+export const ThemeToggle = styled.div`
+  width: 50px;
+  height: 30px;
+  margin-left: 20px;
+  background: ${({ theme }) => theme.theme_button2};
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: ${({ darkMode }) => (darkMode ? "flex-end" : "flex-start")};
+  transition: 0.3s ease;
+  padding: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background: ${({ theme }) => theme.theme_button1};
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s ease;
+    font-size: 18px;
   }
 `;

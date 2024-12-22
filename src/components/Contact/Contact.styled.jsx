@@ -99,6 +99,7 @@ export const ContactInputMessage = styled.textarea`
 `;
 
 export const ContactButton = styled.input`
+  cursor: pointer;
   width: 100%;
   text-decoration: none;
   text-align: center;
@@ -125,4 +126,13 @@ export const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  transition: transform 0.6s, background 0.6s; /* Add smooth transition */
+  &:hover {
+    background: linear-gradient(
+      225deg,
+      hsla(294, 100%, 50%, 1) 0%,
+      hsla(271, 100%, 50%, 1) 100%
+    );
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
 `;

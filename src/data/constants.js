@@ -227,6 +227,18 @@ export const education = [
 
 export const projects = [
   {
+    id: 6,
+    title: "Educity",
+    date: "2024",
+    description:
+      "The React Educity is a web application designed to provide users with an interactive platform for university students. Built using React, the application features a responsive layout that allows users to navigate through various sections. The project incorporates state management for seamless data handling and utilizes modern libraries and tools to enhance user experience.",
+    image: "https://live.staticflickr.com/65535/54220438026_b8c51f51c3_h.jpg",
+    tags: ["React Js", "JavaScript", "HTML", "CSS"],
+    category: "react",
+    github: "https://github.com/Fetivol/react-educity",
+    webapp: "https://fetivol.github.io/react-educity/",
+  },
+  {
     id: 0,
     title: "Book Shelf",
     date: "2023",
@@ -237,24 +249,18 @@ export const projects = [
     category: "html",
     github: "https://github.com/Fetivol/team-project-group-3-JS",
     webapp: "https://anetta999.github.io/team-project-group-3-JS/",
-  },
-  {
-    id: 1,
-    title: "WatchSpot",
-    date: "2023",
-    description:
-      "Responsive Website Project: Developed a fully responsive website optimized for various devices, ensuring compliance with HTML5 semantics and layout validity through standard validation tools. The project utilized font-face for typography, optimized image loading for both vector and raster graphics, and supported retina screens. Key features included the use of icon sprites and the addition of a favicon. The site comprised multiple sections such as Header, About Us, Catalog, Footer, Buy Now (popup), and a Burger menu for mobile devices, each designed with specific layout requirements for mobile (375px), tablet (768px), and desktop (1280px) views. Additionally, I served as the Scrum Master, organizing daily meetings, facilitating open team communication, monitoring project progress and deadlines, resolving issues, liaising with the mentor, and addressing bugs to ensure successful project delivery.",
-    image: "https://live.staticflickr.com/65535/54219384147_ea6600ac7f_b.jpg",
-    tags: ["HTML", "CSS", "Responsive Web Design"],
-    category: "html",
-    github: "https://github.com/Fetivol/watchspot",
-    webapp: "https://light131313.github.io/watchspot/",
     member: [
       {
         name: "Serhii Kozhanov",
         img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
         linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
         github: "https://github.com/LIGHT131313",
+      },
+      {
+        name: "Stanislav Boychuk",
+        img: "https://media.licdn.com/dms/image/v2/D4D35AQERhmSx-x4oJw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1694796381168?e=1735484400&v=beta&t=Z7sqPQBYJ0vRaYEfUr9L8NCy_xfFktuAr5who-Dx-Gc",
+        linkedin: "https://www.linkedin.com/in/stanislav-boychuk/",
+        github: "https://github.com/Fasten-belts",
       },
     ],
   },
@@ -293,6 +299,27 @@ export const projects = [
     ],
   },
   {
+    id: 1,
+    title: "WatchSpot",
+    date: "2023",
+    description:
+      "Responsive Website Project: Developed a fully responsive website optimized for various devices, ensuring compliance with HTML5 semantics and layout validity through standard validation tools. The project utilized font-face for typography, optimized image loading for both vector and raster graphics, and supported retina screens. Key features included the use of icon sprites and the addition of a favicon. The site comprised multiple sections such as Header, About Us, Catalog, Footer, Buy Now (popup), and a Burger menu for mobile devices, each designed with specific layout requirements for mobile (375px), tablet (768px), and desktop (1280px) views. Additionally, I served as the Scrum Master, organizing daily meetings, facilitating open team communication, monitoring project progress and deadlines, resolving issues, liaising with the mentor, and addressing bugs to ensure successful project delivery.",
+    image: "https://live.staticflickr.com/65535/54219384147_ea6600ac7f_b.jpg",
+    tags: ["HTML", "CSS", "Responsive Web Design"],
+    category: "html",
+    github: "https://github.com/Fetivol/watchspot",
+    webapp: "https://light131313.github.io/watchspot/",
+    member: [
+      {
+        name: "Serhii Kozhanov",
+        img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
+        linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
+        github: "https://github.com/LIGHT131313",
+      },
+    ],
+  },
+
+  {
     id: 3,
     title: "WebStudio",
     date: "2023",
@@ -309,7 +336,7 @@ export const projects = [
     title: "Search Image",
     date: "2023",
     description:
-      "The project is a JavaScript application that allows users to search for and display images from the Unsplash API. It features a user-friendly interface with a search bar for entering keywords, displaying results in a responsive grid layout. The application supports infinite scrolling, automatically loading more images as users scroll down the page, enhancing the browsing experience. Users can click on individual images to view them in a larger format. This project showcases skills in API integration, asynchronous programming, and responsive web design, making it an excellent demonstration of front-end development capabilities.",
+      "The project is a JavaScript application that allows users to search for and display images from the Pixabay API. It features a user-friendly interface with a search bar for entering keywords, displaying results in a responsive layout. The application supports infinite scrolling, automatically loading more images as users scroll down the page, enhancing the browsing experience. Users can click on individual images to view them in a larger format. This project showcases skills in API integration, asynchronous programming, and responsive web design, making it an excellent demonstration of front-end development capabilities.",
     image: "https://live.staticflickr.com/65535/54219467192_f1af3dfab7_h.jpg",
     tags: ["JavaScript", "HTML", "CSS", "REST API", "Responsive Web Design"],
     category: "html",
@@ -327,17 +354,5 @@ export const projects = [
     category: "react",
     github: "https://github.com/Fetivol/expence-tracker",
     webapp: "https://fetivol.github.io/expence-tracker/",
-  },
-  {
-    id: 6,
-    title: "Educity",
-    date: "2024",
-    description:
-      "The React Educity is a web application designed to provide users with an interactive platform for university students. Built using React, the application features a responsive layout that allows users to navigate through various sections. The project incorporates state management for seamless data handling and utilizes modern libraries and tools to enhance user experience.",
-    image: "https://live.staticflickr.com/65535/54220438026_b8c51f51c3_h.jpg",
-    tags: ["React Js", "JavaScript", "HTML", "CSS"],
-    category: "react",
-    github: "https://github.com/Fetivol/react-educity",
-    webapp: "https://fetivol.github.io/react-educity/",
   },
 ];
