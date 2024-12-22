@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { CloseRounded, GitHub, LinkedIn } from "@mui/icons-material";
 import { Modal } from "@mui/material";
 import {
@@ -21,6 +21,29 @@ import {
 
 const ProjectDetails = ({ openModal, setOpenModal }) => {
   const project = openModal?.project;
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setOpenModal({ state: false, project: null });
+      }
+    };
+
+    const handleEscKeyPress = (e) => {
+      if (e.key === "Escape") {
+        setOpenModal({ state: false, project: null });
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscKeyPress);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscKeyPress);
+    };
+  }, [setOpenModal]);
 
   return (
     <Modal
@@ -28,7 +51,7 @@ const ProjectDetails = ({ openModal, setOpenModal }) => {
       onClose={() => setOpenModal({ state: false, project: null })}
     >
       <Container>
-        <Wrapper>
+        <Wrapper ref={modalRef}>
           <CloseRounded
             style={{
               position: "absolute",

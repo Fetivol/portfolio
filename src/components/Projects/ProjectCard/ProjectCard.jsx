@@ -15,7 +15,12 @@ import {
 
 const ProjectCard = ({ project, setOpenModal }) => {
   return (
-    <Card onClick={() => setOpenModal({ state: true, project: project })}>
+    <Card
+      onClick={(e) => {
+        e.stopPropagation(); // Prevent propagation
+        setOpenModal({ state: true, project: project });
+      }}
+    >
       <Image src={project.image} alt={project.title} />
       {project.tags?.length > 0 && (
         <Tags>

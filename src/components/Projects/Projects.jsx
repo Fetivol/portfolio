@@ -47,7 +47,6 @@ const Projects = ({ openModal, setOpenModal }) => {
               <ProjectCard
                 project={project}
                 key={project.id}
-                openModal={openModal}
                 setOpenModal={setOpenModal}
               />
             ))}
