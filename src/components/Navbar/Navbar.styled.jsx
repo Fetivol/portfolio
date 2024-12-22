@@ -42,7 +42,7 @@ export const NavItems = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 20px;
   padding: 0 6px;
   list-style: none;
 
@@ -82,6 +82,7 @@ export const GithubButton = styled.a`
   justify-content: center;
   display: flex;
   align-items: center;
+  width: auto;
   height: 70%;
   border-radius: 20px;
   color: ${({ theme }) => theme.primary};
@@ -91,6 +92,7 @@ export const GithubButton = styled.a`
   text-decoration: none;
   font-size: 16px;
   transition: all 0.6s ease-in-out;
+
   :hover {
     background: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.white};

@@ -31,7 +31,11 @@ const Footer = () => {
         <Logo>Fetivol</Logo>
         <Nav>
           {links.map((link) => {
-            return <NavLink href={`#${link.toLowerCase()}`}>{link}</NavLink>;
+            return (
+              <NavLink href={`#${link.toLowerCase()}`} key={link}>
+                {link}
+              </NavLink>
+            );
           })}
         </Nav>
         <SocialMediaIcons>

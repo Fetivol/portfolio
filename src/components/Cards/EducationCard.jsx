@@ -10,6 +10,7 @@ import {
   Span,
   Top,
   Grade,
+  Document,
 } from "./Cards.styled";
 
 const EducationCard = ({ education }) => {
@@ -23,12 +24,19 @@ const EducationCard = ({ education }) => {
           <CardDate>{education.date}</CardDate>
         </Body>
       </Top>
-      <Grade>
-        <b>Grade: </b>
-        {education.grade}
-      </Grade>
+      {education.grade && (
+        <Grade>
+          <b>Grade: </b>
+          {education.grade}
+        </Grade>
+      )}
       <Description>
         <Span>{education.desc}</Span>
+        {education.doc && (
+          <a href={education.doc} target="new">
+            <Document src={education.docimg} />
+          </a>
+        )}
       </Description>
     </Card>
   );
