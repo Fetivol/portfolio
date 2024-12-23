@@ -18,7 +18,7 @@ export const Nav = styled.div`
 
 export const NavContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 60px;
   z-index: 1;
@@ -33,6 +33,7 @@ export const NavLogo = styled(Link)`
   display: flex;
   justify-content: start;
   align-items: center;
+  color: ${({ theme }) => theme.primary};
   text-decoration: none;
   @media (max-width: 640px) {
     padding: 0 0px;
@@ -47,7 +48,7 @@ export const NavItems = styled.ul`
   padding: 0 6px;
   list-style: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 876px) {
     display: none;
   }
 `;
@@ -73,7 +74,7 @@ export const ButtonContainer = styled.div`
   justify-content: end;
   align-items: center;
   padding: 0 6px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 876px) {
     display: none;
   }
 `;
@@ -111,12 +112,12 @@ export const Span = styled.div`
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 876px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    transform: translate(-100%, 70%);
     font-size: 1.5rem;
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
@@ -158,21 +159,18 @@ export const MobileLink = styled.a`
     border-bottom: 2px solid ${({ theme }) => theme.primary};
   }
 `;
-
 export const ThemeToggle = styled.div`
   width: 50px;
-  height: 30px;
-  margin-left: 20px;
-  background: ${({ theme }) => theme.theme_button2};
-  border-radius: 30px;
-  position: relative;
+  height: auto;
+  /* margin-left: 20px; */
+  background: transparent;
+  /* border-radius: 30px; */
+  /* position: relative; */
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: ${({ darkMode }) => (darkMode ? "flex-end" : "flex-start")};
   transition: 0.3s ease;
   padding: 3px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   span {
     display: flex;
@@ -182,8 +180,13 @@ export const ThemeToggle = styled.div`
     height: 24px;
     background: ${({ theme }) => theme.theme_button1};
     border-radius: 50%;
-    position: absolute;
+    /* position: absolute; */
     transition: all 0.3s ease;
     font-size: 18px;
+
+    &:hover {
+      background: ${({ theme }) => theme.theme_button4};
+      color: ${({ theme }) => theme.theme_button3};
+    }
   }
 `;

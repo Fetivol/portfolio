@@ -11,6 +11,7 @@ import {
   NavLink,
   NavLogo,
   Span,
+  ThemeButton,
   ThemeToggle,
 } from "./Navbar.styled";
 import { DiCssdeck } from "react-icons/di";
@@ -61,7 +62,6 @@ const Navbar = ({ setDarkMode, darkMode }) => {
             style={{
               display: "flex",
               alignItems: "center",
-              color: "white",
               cursor: "pointer",
             }}
           >
@@ -95,7 +95,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
           onClick={() => setDarkMode((prevMode) => !prevMode)}
           darkMode={darkMode}
         >
-          <span>{darkMode ? <FaMoon /> : <FaSun />}</span>
+          <span>{darkMode ? <FaSun /> : <FaMoon />}</span>
         </ThemeToggle>
 
         <ButtonContainer>

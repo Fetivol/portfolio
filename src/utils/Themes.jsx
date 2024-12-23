@@ -11,6 +11,8 @@ export const darkTheme = {
   black: "#000000",
   theme_button1: "#FF8C00",
   theme_button2: "#fff;",
+  theme_button3: "#fff;",
+  theme_button4: "#854CE6",
 };
 
 export const lightTheme = {
@@ -24,5 +26,7 @@ export const lightTheme = {
   card_light: "#f0f0f0",
 
   theme_button1: "#4A90E2",
-  theme_button2: "#854CE6",
+  theme_button2: "#572061;",
+  theme_button3: "#fff;",
+  theme_button4: "#854CE6",
 };
