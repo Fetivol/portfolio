@@ -15,7 +15,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(null);
+  const [darkMode, setDarkMode] = useState(null); // Start with `null`
   const [openModal, setOpenModal] = useState({ state: false, project: null });
 
   const currentTheme = darkMode ? darkTheme : lightTheme;
@@ -34,8 +34,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
+    if (darkMode !== null) {
+      localStorage.setItem("theme", darkMode ? "dark" : "light");
+    }
   }, [darkMode]);
+
+  if (darkMode === null) return null;
 
   return (
     <ThemeProvider theme={currentTheme}>
