@@ -24,7 +24,6 @@ export const lightTheme = {
   card: "#FFFFFF",
   button: "#5c5b5b",
   card_light: "#f0f0f0",
-
   theme_button1: "#4A90E2",
   theme_button2: "#572061;",
   theme_button3: "#fff;",

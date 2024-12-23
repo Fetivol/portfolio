@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Snackbar } from "@mui/material";
 import {
   ContactButton,
   ContactForm,
@@ -13,10 +12,10 @@ import {
   Title,
   Wrapper,
 } from "./Contact.styled";
+import toast from "react-hot-toast";
 
 const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const [formError, setFormError] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const form = useRef();
 
   const handleSubmit = (e) => {
@@ -34,14 +33,16 @@ const Contact = () => {
     };
 
     if (!fromEmail || !fromName || !subject || !message) {
-      setFormError("Please fill all the fields.");
+      toast.error("Please fill all the fields.");
       return;
     }
 
     if (!isValidEmail(fromEmail)) {
-      setFormError("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       return;
     }
+    setDisabled(true);
+
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -51,9 +52,9 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          setOpen(true);
-          setFormError("");
+          toast.success("Email sent successfully!");
           form.current.reset();
+          setDisabled(false);
         },
         (error) => {
           console.log(error.text);
@@ -74,24 +75,12 @@ const Contact = () => {
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send"></ContactButton>
+          <ContactButton
+            type="submit"
+            value={disabled ? "Sending..." : "Send"}
+            disabled={disabled}
+          ></ContactButton>
         </ContactForm>
-        <Snackbar
-          open={open}
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
-        <Snackbar
-          open={!!formError}
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          autoHideDuration={6000}
-          onClose={() => setFormError("")}
-          message={formError}
-          severity="error"
-        />
       </Wrapper>
     </Container>
   );

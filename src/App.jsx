@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import ProjectDetails from "./components/Projects/ProjectDetails/ProjectDetails";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [darkMode, setDarkMode] = useState(null); // Start with `null`
@@ -60,6 +61,27 @@ function App() {
           <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
         )}
       </Body>
+      <Toaster
+        position="bottom-left"
+        toastOptions={{
+          style: {
+            background: currentTheme.primary,
+            color: currentTheme.text_primary,
+          },
+          success: {
+            iconTheme: {
+              primary: currentTheme.primary,
+              secondary: currentTheme.background_primary,
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: currentTheme.error,
+              secondary: currentTheme.background_primary,
+            },
+          },
+        }}
+      />
     </ThemeProvider>
   );
 }
