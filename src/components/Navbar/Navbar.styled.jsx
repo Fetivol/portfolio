@@ -162,10 +162,9 @@ export const MobileLink = styled.a`
 export const ThemeToggle = styled.div`
   width: 50px;
   height: auto;
-  /* margin-left: 20px; */
   background: transparent;
-  /* border-radius: 30px; */
-  /* position: relative; */
+  margin-left: 10px;
+  margin-right: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -180,7 +179,6 @@ export const ThemeToggle = styled.div`
     height: 24px;
     background: ${({ theme }) => theme.theme_button1};
     border-radius: 50%;
-    /* position: absolute; */
     transition: all 0.3s ease;
     font-size: 18px;
 
