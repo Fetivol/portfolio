@@ -9,16 +9,33 @@ import { Wrapper } from "./components/Wrapper/Wrapper";
 import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectDetails from "./components/Projects/ProjectDetails/ProjectDetails";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(null);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
 
   const currentTheme = darkMode ? darkTheme : lightTheme;
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setDarkMode(savedTheme === "dark");
+    } else {
+      // Default to system preference if no theme is saved
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setDarkMode(prefersDark);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   return (
     <ThemeProvider theme={currentTheme}>

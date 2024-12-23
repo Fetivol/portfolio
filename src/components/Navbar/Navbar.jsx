@@ -11,7 +11,6 @@ import {
   NavLink,
   NavLogo,
   Span,
-  ThemeButton,
   ThemeToggle,
 } from "./Navbar.styled";
 import { DiCssdeck } from "react-icons/di";
