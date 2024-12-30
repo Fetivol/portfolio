@@ -252,13 +252,13 @@ export const projects = [
     member: [
       {
         name: "Serhii Kozhanov",
-        img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
+        img: "https://cdn-icons-png.flaticon.com/512/265/265674.png",
         linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
         github: "https://github.com/LIGHT131313",
       },
       {
         name: "Stanislav Boychuk",
-        img: "https://media.licdn.com/dms/image/v2/D4D35AQERhmSx-x4oJw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1694796381168?e=1735484400&v=beta&t=Z7sqPQBYJ0vRaYEfUr9L8NCy_xfFktuAr5who-Dx-Gc",
+        img: "https://cdn-icons-png.flaticon.com/512/265/265674.png",
         linkedin: "https://www.linkedin.com/in/stanislav-boychuk/",
         github: "https://github.com/Fasten-belts",
       },
@@ -286,13 +286,13 @@ export const projects = [
     member: [
       {
         name: "Serhii Kozhanov",
-        img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
+        img: "https://cdn-icons-png.flaticon.com/512/265/265674.png",
         linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
         github: "https://github.com/LIGHT131313",
       },
       {
         name: "Stanislav Boychuk",
-        img: "https://media.licdn.com/dms/image/v2/D4D35AQERhmSx-x4oJw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1694796381168?e=1735484400&v=beta&t=Z7sqPQBYJ0vRaYEfUr9L8NCy_xfFktuAr5who-Dx-Gc",
+        img: "https://cdn-icons-png.flaticon.com/512/265/265674.png",
         linkedin: "https://www.linkedin.com/in/stanislav-boychuk/",
         github: "https://github.com/Fasten-belts",
       },
@@ -312,7 +312,7 @@ export const projects = [
     member: [
       {
         name: "Serhii Kozhanov",
-        img: "https://media.licdn.com/dms/image/v2/D4E35AQFNh9x65Hn1hg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1708361101859?e=1735484400&v=beta&t=vcA18AWtWqdYL7PA9jGfjraoVAuPA-GYj2NkcfVKtxI",
+        img: "https://cdn-icons-png.flaticon.com/512/265/265674.png",
         linkedin: "https://www.linkedin.com/in/serhii-kozhanov/",
         github: "https://github.com/LIGHT131313",
       },
